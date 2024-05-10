@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Montserrat:ital@0;1&family=Poetsen+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center; 
+    background-color: black;
+    color: black;
+    perspective: 1000px;
+}
+section::before{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(-150px, -100px);
+    background:rgb(255, 69, 0, 0.1);
+}
+section::after{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(150px, 100px);
+    background: rgb(255, 69, 0, 0.1);
+}
+.container {
+    position: relative;
+    width: 375px;
+    height: 275px;
+    display: flex;
+    z-index: 100;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+.container:hover{
+    transform: rotateY(180deg);
+}
+
+.container .card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    background: orangered;
+    border: none;
+    backface-visibility: hidden;
+}
+.front-face .wifi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+
+}
+.front-face .logo img {
+    width: 200px;
+    height: auto;
+    margin-right: -60px;
+    margin-top: -20px;
+}
+.front-face .logo h6 {
+    font-size: 8px;
+    text-shadow: 2px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    direction: rtl;
+    color:hsla(240, 2%, 50%, 0.8);
+    margin-top: -20px;
+
+}
+.front-face .wifi,
+.front-face header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.front-face .chip {
+    width: 25%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    margin-left: 20px;
+}
+.front-face .triangle {
+    display: flex;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 0;
+    border-bottom: 20px solid hsl(228, 12%, 48%);
+    border-right: 10px solid transparent;
+    transform: rotate(-90deg);
+    margin-top: -20px;
+    /* -webkit-transform: rotate(135deg); */
+    
+}
+.front-face .card-details {
+    margin-top: 30px;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h6 {
+    color: white;
+}
+h5.number{
+    position: relative;
+    z-index: 1000;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+h5.name{
+    margin-top: 10px;
+}
+.card-details .valid-date {
+    display: flex;
+    align-items: center;
+    margin-top: 9px;
+    padding-left: 20%;
+}
+.card-details .valid-date h6 {
+    margin-left: 5px;
+    letter-spacing: 2px;
+    font-size: 8px;
+}
+.card-details .valid-date h5 {
+    margin-left: 10px;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+.hologram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 240px ;
+}
+.hologram img {
+    width: 130px;
+    height: 130px;
+    margin-top: -130px;
+}
+.hologram h5 {
+    font-size: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.card.back-face {
+    border: 1px solid none;
+    padding: 15px 15px 15px 15px;
+    transform: rotateY(180deg);
+    color: black;
+    background-color: white;
+
+}
+.card.back-face .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.card.back-face header {
+    color: black;
+    display: flex;
+    flex-direction:;
+    align-items: end;
+    justify-content: space-between;
+}
+.card.back-face header h6:nth-child(1) {
+    font-size: 10px;
+    padding-left: 90px;
+    color: black;
+}
+.card.back-face header h6:nth-child(2) {
+    font-size: 8px;
+    color: black;
+}
+.card.back-face .magnetic-strip{
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    left: 0;
+    position: absolute;
+    margin-top: 5px;
+}
+.card.back-face .valid {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-top: 60px;
+    font-size: 10px;
+    color: black;
+}
+.card.back-face .cvv {
+    display: flex;
+    font-weight: 500;
+    text-shadow: 10;
+    justify-content: flex-end;
+    align-items: center;
+    width: 75%;
+    height: 40px;
+    background-color: #fff;
+    margin-top: 5px;
+    border-radius: 3px;
+    background: repeating-linear-gradient(rgb(232, 17, 17), rgb(22, 22, 208) 3px, #fa4001 10px, #efefef 6px);
+}
+.card.back-face .cvv i:nth-child(2){
+    margin-right: -30px;
+    background-color:#fff;
+    width: 30px;
+    height: 20px;
+    margin-top: 0px;
+    text-align: center;
+    border: 1px solid black;
+    border-left: none;
+
+}
+.card.back-face h5 {
+    font-size: 9px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 10px;
+    letter-spacing: 2;
+    padding-left: 8px;
+}
+.card.back-face footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 10px;
+
+}
